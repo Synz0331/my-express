@@ -1,0 +1,24 @@
+extends layout.jade
+
+// TODO: use the better template from the hackathon
+block content
+    div.row
+        div.five.columns 
+          b Issue
+        div.two.columns 
+          b Title/Team
+        div.four.columns 
+          b State (Open/Close) 
+    each item in Issues
+        div.row
+            div.five.columns
+                b
+                 a(href='/view/issues/'+item.id)
+                    = "Issue "+item.number
+            div.two.columns= item.title
+            div.four.columns
+                if (item.state == "open")
+                    |Open
+                else
+                    |Closed
+

@@ -1,0 +1,7 @@
+extends layout
+
+block content
+	- var item = Issues
+	h3 #{item.title}
+	div.row #{item.body}
+		div.six.columns= 'created at: '+item.created_at

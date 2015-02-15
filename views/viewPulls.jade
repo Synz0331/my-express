@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	- var item = Pulls
+	h3 #{item.title}
+	div.row #{item.body}
+		div.four.columns= 'state: '+item.state
+		div.four.columns= 'created at: '+item.created_at
+	div.row= 'Merge Commit: '+item.merge_commit_sha
+
