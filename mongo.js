@@ -25,7 +25,9 @@ require('./mongo/issuesView')(app)
 require('./mongo/pullsList')(app)
 require('./mongo/pullsView')(app)
 
-var server = app.listen(3000, function() {
+app.set('port', (process.env.Port || 3000))
+
+var server = app.listen(app.get('port'), function() {
 
     var host = server.address().address
     var port = server.address().port
