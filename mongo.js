@@ -27,7 +27,7 @@ require('./mongo/pullsView')(app)
 
 app.set('port', (process.env.Port || 3000))
 
-var server = app.listen(app.get('port'), function() {
+var server = app.listen(process.env.PORT||app.get('port'), function() {
 
     var host = server.address().address
     var port = server.address().port
